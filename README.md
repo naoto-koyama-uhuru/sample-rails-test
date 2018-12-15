@@ -66,14 +66,14 @@ Randomized with seed 34242
 - spec/support以下のファイルの読み込みができるようにする
 
 ```spec/rails_helper```
-```rb
+```ruby
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f } # コメントアウトを外す
 ```
 
 - TEST DBへMigrationを掛けていないときに自動でMigrationするのではなく、アラートを表示
 
 ```spec/rails_helper```
-```rb
+```ruby
 ActiveRecord::Migration.check_pending!
 # begin
 #   ActiveRecord::Migration.maintain_test_schema!
@@ -100,7 +100,7 @@ end
 ```
 
 ```seeds.rb```
-```rb
+```ruby
 require 'factory_bot'
 include FactoryBot::Syntax::Methods
 FactoryBot.definition_file_paths = [ Rails.root.join('spec', 'factories') ]
@@ -108,21 +108,17 @@ FactoryBot.reload
 ```
 
 ```ruby
-# 通常FactoryBotをつけないと、メソッドを呼べない
-user = FactoryBot.create(:user)
-
-# 上の設定を追加することで、FactoryBotの記述が省略できる。
-user = create(:user)
+user = create(:user) # FactoryBot.create(:user)でなくてOK
 ```
 
 - 現在時刻の時間をずらす(travel_to)
 
 ```spec/rails_helper```
-```rb
+```ruby
 config.include ActiveSupport::Testing::TimeHelpers # 追記
 ```
 
-```rb
+```ruby
 decsribe "Time.current" do
   it do
     travel_to('2018-12-16 8:00'.to_time) do
@@ -135,13 +131,13 @@ end
 - テスト実行毎にデータベースを初期化する
 
 ```Gemfile```
-```rb
+```ruby
 group :test do
   gem 'database_rewinder'
 end
 ```
 ```spec/support/factory_bot.rb```
-```rb
+```ruby
 RSpec.configure do |config|
   config.before(:suite) do
     DatabaseRewinder.clean_all
@@ -156,7 +152,7 @@ end
 - テストの順番をランダムにする
 
 ```spec/spec_helper.rb```
-```rb
+```ruby
 config.order = :random # 最終行に追加
 ```
 - 同じ順番を再現したい場合
