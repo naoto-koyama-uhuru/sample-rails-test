@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { create(:user) }
+  describe "#full_name" do
+    subject { user.full_name }
+    it { is_expected.to eq "first_name last_name" }
+  end
 end
