@@ -7,3 +7,4 @@
     - [プロジェクトの作成](./doc/rails/project.md)
     - [postgresの設定](./doc/rails/postgres_sql.md)
     - [RSpecの設定](./doc/rails/rspec.md)
+  - [Travic CIの設定](./doc/travic_ci/settings.md)
