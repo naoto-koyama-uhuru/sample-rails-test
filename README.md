@@ -1,4 +1,6 @@
-# README
+[![Build Status](https://travis-ci.org/naoto-koyama-uhuru/sample-rails-test.svg?branch=master)](https://travis-ci.org/naoto-koyama-uhuru/sample-rails-test)
+
+# 設定手順
 
 - ここではgithub + herokuでrailsの環境を作成する手順を記載.
 - 以下の手順に沿って設定していく
