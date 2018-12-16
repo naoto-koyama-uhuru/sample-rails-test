@@ -1,0 +1,1 @@
+# postgresの設定
