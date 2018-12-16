@@ -10,3 +10,4 @@
     - [postgresの設定](./doc/rails/postgres_sql.md)
     - [RSpecの設定](./doc/rails/rspec.md)
   - [Travic CIの設定](./doc/travic_ci/settings.md)
+  - [Herokuの設定](./doc/heroku/settings.md)

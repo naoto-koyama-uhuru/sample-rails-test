@@ -59,5 +59,11 @@ test:
   - 「continuous-integration/travis-ci」をチェック
 ![](../../pic/travis_ci/github_options2.png)
 
+## バッジの設定
+- travic ciでバッジを選択
+![](../../pic/travis_ci/badge1.png)
+- Status Imageが表示されるため、「Markdown」を選択して、READMEの先頭に表示されているタグをコピーしてpushしておく
+![](../../pic/travis_ci/badge2.png)
+
 
 
