@@ -1,10 +1,17 @@
 language: ruby
 rvm: 2.4.3
 addons:
-  postgresql: "9.6"
+  postgresql: '9.6'
 bundler_args: "--without development --deployment -j4"
 cache: bundler
 before_script:
-  - cp config/database.travis.yml config/database.yml
-  - bundle exec rails db:setup
+- cp config/database.travis.yml config/database.yml
+- bundle exec rails db:setup
 script: bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: jJs3NgKjIMAcUP9Vc5Anxyxe40cFcFmISKakf6anjYyvdm37E8lHShpIVtk4mAkQC5woJfxj0xX7r45CLbsIt8Ta2tqS05Udie5886T4Y9MqreMwMP2ElUZRQhk4TFQXjXE7hYqmge6o+GhWUClmqUIujTcdMXn/z6nr11KYzzexyoTSCdwwB8ZfEhWAFClV3u+MyhhYIkOngJVML2AeHbWYfNwhbJ2y9APw/Hac30B/7qZ3eDT2kHS+0zPlZmww9cb0mcFnfoUFCLFP4HXDGqVaRMSsc8xF+rxV9+8HGrT0pWvHbSy1FG1SPJQ13kFGU1lhXFdREuO+8MWwoUuRBPPwTp/Q7uR2b7Nin8Pk438JhRe54xz1wirsHos9xMB8kGow2O2NbARt1ktvc+pbQqH9oOJ3liRFY+9eJq7trtT9VwBzI/e7EqnK9RRCuCc9dCMWuDjO5kFnfGIiHHR4LRqYqow3AicglGNSITxM1N/ywLXl+AwVPG+8oMibLhk5giKXWYWNOgHmGVbJvn/hWnHYI+igyy0Hm0sgWeTpnD89OUo6tD6fxD3Z3yEtPVTJnwaGAFUyCPp0DWqkFeEJxjbLmEZphs8zelEMDNY7cBZ9Tr3ODdprCnfW7hr/NhPGMSOgyAUsY7UqFfag7J/4fumpT4+J5aIPSU3L0pe+t5c=
+  app: sample-rails-test
+  on:
+    repo: naoto-koyama-uhuru/sample-rails-test
