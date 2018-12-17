@@ -10,3 +10,4 @@
   - [RSpecの設定](./doc/rails/rspec.md)
   - [Travic CIの設定](./doc/travic_ci/settings.md)
   - [Heroku CDの設定](./doc/heroku/cd_settings.md)
+  - [Heroku Review Appsの設定](./doc/heroku/review_apps_settings.md)
