@@ -53,5 +53,9 @@ deploy:
 ```
 
 - テスト実行後にHerokuへdeployされていることを確認する
-![](../../pic/travis_ci/heroku_deploy.png)
+![](../../pic/travis_ci/heroku_deploy1.png)
+
+- master以外のbranchではdeployはskipされる
+![](../../pic/travis_ci/heroku_deploy2.png)
+
 
